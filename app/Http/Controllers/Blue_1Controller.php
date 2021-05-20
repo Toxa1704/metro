@@ -36,7 +36,8 @@ class Blue_1Controller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Blue_1::create($request->only(['name', 'transfer', 'number_of_in_out', 'comment']));
+        return \redirect('blue_1.index');
     }
 
     /**

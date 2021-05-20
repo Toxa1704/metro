@@ -3,6 +3,8 @@
 @section('title', 'Blue line')
 
 @section('content')
+<a  class="btn btn-primary"  role="button" href="{{route('blue_1.create')}}">Creat station</a>
+
 <table class="table">
   <thead>
     <tr>

@@ -14,7 +14,8 @@ class Blue_1Controller extends Controller
      */
     public function index()
     {
-        //
+        $blue_1 = Blue_1::get();
+        return view('index', compact('blue_1'));
     }
 
     /**
@@ -24,7 +25,7 @@ class Blue_1Controller extends Controller
      */
     public function create()
     {
-        //
+        return view('form');
     }
 
     /**
@@ -46,7 +47,7 @@ class Blue_1Controller extends Controller
      */
     public function show(Blue_1 $blue_1)
     {
-        //
+        return view('show');
     }
 
     /**
@@ -57,7 +58,7 @@ class Blue_1Controller extends Controller
      */
     public function edit(Blue_1 $blue_1)
     {
-        //
+        return view('form', compact('blue_1'));
     }
 
     /**

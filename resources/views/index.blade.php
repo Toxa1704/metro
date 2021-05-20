@@ -7,29 +7,22 @@
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Name</th>
+      <th scope="col">Transfer</th>
+      <th scope="col">Number of in/out</th>
+      <th score="col">Comment</th>
     </tr>
   </thead>
   <tbody>
+    @foreach(@blue_1 as $blue)
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <th scope="row">{{$blue -> id}}</th>
+      <td>{{$blue -> name}}</td>
+      <td>{{$blue -> transfer}}</td>
+      <td>{{$blue -> number_of_in/out}}</td>
+      <td>{{$blue -> comment}}</td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
+    @endforeach
   </tbody>
 </table>
 @endsection

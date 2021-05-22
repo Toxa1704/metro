@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Http\Requests\Blue_1Request;
 use App\Models\Blue_1;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class Blue_1Controller extends Controller
@@ -10,7 +11,7 @@ class Blue_1Controller extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function index()
     {
@@ -21,7 +22,7 @@ class Blue_1Controller extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function create()
     {
@@ -36,8 +37,8 @@ class Blue_1Controller extends Controller
      */
     public function store(Request $request)
     {
-        Blue_1::create($request->only(['name', 'transfer', 'number_of_in_out', 'comment']));
-        return \redirect('blue_1.index');
+        Blue_1::create($request->all());
+        return redirect() ->route('blue_1.index');
     }
 
     /**
